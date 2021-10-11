@@ -1,0 +1,25 @@
+version: '3'
+services:
+  node:
+    build:
+      dockerfile: Dockerfile
+      context: ./node
+    ports:
+    - '6432:6432'
+    - '6433:6433'
+    environment:
+      - NODE_HOST=node
+      - NODE_RPCPORT=6432
+      - NODE_SRVPORT=6433
+  web:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./web
+    ports:
+      - '80:80'
+#    environment:
+#      - NODE_HOST=node
+#      - NODE_RPCPORT=6432
+#      - NODE_SRVPORT=6433
+
