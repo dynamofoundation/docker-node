@@ -1,0 +1,6 @@
+1. Need settings.txt for bridge
+2. SED vs overwrite of bridge.php config file for web wallet
+3. Test for actual POC
+4. UPDATE README
+   * Change process for dynamo.conf creation / placement
+   * Account for bridge.php needing user / pass 
