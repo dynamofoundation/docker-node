@@ -1,0 +1,12 @@
+txindex=0
+rpcbind=0.0.0.0
+rpcport=6433
+rpcuser=dynamo
+rpcpassword=123456
+rpcallowip=0.0.0.0/0
+fallbackfee=0.01
+nftdbkey="supersecretstring"
+nftnode=true
+
+# If you want to add any peers, un-comment and configure below:
+#addnode=10.10.100.11
