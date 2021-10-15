@@ -1,0 +1,46 @@
+version: '3'
+services:
+  node:
+    build:
+      dockerfile: Dockerfile
+      context: ./node
+    ports:
+    - '6432:6432'
+    - '6433:6433'
+    environment:
+      - NODE_HOST=node
+      - NODE_RPCPORT=6432
+      - NODE_SRVPORT=6433
+    volumes:
+      - /var/tmp/dynamo/:/root/.dynamo/
+  bridge:
+#    restart: always
+    build: 
+      dockerfile: Dockerfile
+      context: ./bridge
+    environment:
+      - NODE_HOST=node
+      - NODE_RPCPORT=6432
+    depends_on:
+      - node 
+  web:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./web
+    ports:
+      - '80:80'
+    environment:
+      - BRIDGE_HOST=bridge
+      - NODE_HOST=node
+      - NODE_RPCPORT=6432
+      - NODE_SRVPORT=6433
+    depends_on:
+      - bridge 
+      - php
+  php:
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./php
+

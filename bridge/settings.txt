@@ -1,0 +1,6 @@
+{
+"ListenURL": "http://*:9090/",
+"FullNodeRPC": "http://node:6433/",
+"FullNodeUser": "dynamo",
+"FullNodePass": "123456"
+}
