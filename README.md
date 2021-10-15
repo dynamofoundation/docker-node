@@ -32,13 +32,14 @@ Web-bridge & web wallet support being added although this is still under develop
 # Summary of setup
 (Note: This assumes a working docker environment already exists.)
 
-    1. Create a location on disk where the node data will be stored. This can be anywhere but will be needed to keep the blockchain, NFT database, etc persistent across restarts.
+    1. Create a location on disk where the node data will be stored.
     2. Edit the node/Dockerfile to use this as its volume. (Default is /var/tmp/dynamo)
-    3. Create a dynamo.conf file based on the example and edit the user/password/nftdbkey settings. DO NOT USE THE DEFAULTS. Place this file in your chosen data location.
-    4. Edit the bridge.php files in both the php and web directories to match your user/password.
-    5. Edit the settings.txt in the bridge directory to match your user/password.
-    6. (Optional) Create a client.conf based on the example and copy into your node data location.
-    7. Run "docker-compose up" from the root project folder and environment will be built.
+    3. Create a dynamo.conf file based on the example and edit the user/password/nftdbkey settings.
+    4. Place dynamo.conf file in your chosen data location.
+    5. Edit the bridge.php files in both the php and web directories to match your user/password.
+    6. Edit the settings.txt in the bridge directory to match your user/password.
+    7. (Optional) Create a client.conf based on the example and copy into your node data location.
+    8. Run "docker-compose up" from the root project folder and environment will be built.
 
 # Notes
 
