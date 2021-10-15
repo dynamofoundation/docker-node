@@ -20,8 +20,6 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
 WORKDIR /app
 COPY settings.txt .
-COPY wallet.dat .
-#COPY tx.dat . 
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "web-app-server.dll"]
 
