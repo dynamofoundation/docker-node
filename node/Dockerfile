@@ -10,17 +10,6 @@ RUN apt-get update && \
     apt-get install -y git && \
     mkdir ~/.dynamo && \
     git clone https://github.com/dynamofoundation/dynamo-core.git && \
-    echo "server=1" > ~/.dynamo/dynamo.conf && \
-    echo "daemon=0" >> ~/.dynamo/dynamo.conf && \
-    echo "txindex=0" >> ~/.dynamo/dynamo.conf && \
-    echo "rpcbind=0.0.0.0" >> ~/.dynamo/dynamo.conf && \
-    echo "rpcport=6433" >> ~/.dynamo/dynamo.conf && \
-    echo "rpcuser=dynamo" >> ~/.dynamo/dynamo.conf && \
-    echo "rpcpassword=123456" >> ~/.dynamo/dynamo.conf && \
-    echo "rpcallowip=0.0.0.0/0" >> ~/.dynamo/dynamo.conf && \
-    echo "fallbackfee=0.01" >> ~/.dynamo/dynamo.conf && \
-    echo "nftdbkey=supersecretstring" >> ~/.dynamo/dynamo.conf && \
-    echo "nftnode=true" >> ~/.dynamo/dynamo.conf && \
     cd dynamo-core && \
     echo "#!/bin/bash" > make-dynamo.sh && \
     echo "/usr/bin/make " >> make-dynamo.sh && \
@@ -35,7 +24,8 @@ RUN apt-get update && \
     apt-get remove -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 && \
     apt-get autoremove -y && \
     apt-get clean && rm -rf /var/lib/apt/lists/* 
- 
+
+COPY get-info.sh /bin/ 
 	
 	
 CMD ["dynamo-core"]

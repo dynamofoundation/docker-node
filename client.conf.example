@@ -1,0 +1,4 @@
+rpcconnect=localhost
+rpcport=6433
+rpcuser=dynamo
+rpcpassword=123456

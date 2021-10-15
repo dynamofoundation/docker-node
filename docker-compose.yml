@@ -14,7 +14,7 @@ services:
     volumes:
       - /var/tmp/dynamo/:/root/.dynamo/
   bridge:
-    restart: always
+#    restart: always
     build: 
       dockerfile: Dockerfile
       context: ./bridge
