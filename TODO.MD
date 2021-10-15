@@ -4,3 +4,4 @@
   - Change process for dynamo.conf creation / placement
   - Account for bridge.php needing user / pass 
   - Add node client process for config & use (get-info.sh)
+* Change repo name from "docker-node" to "dyn-docker-node"
