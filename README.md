@@ -59,9 +59,7 @@ If you want to run the node image ONLY you have two options:
 If you bothered to setup the client.conf file you can interact with the full node via the commandline client tool. The "get-info.sh" script is an example of this.
 
     1. Login to the container using a command like the example below:
-```bash
-docker exec -it cc4899477f2f /bin/bash
-```
+        docker exec -it cc4899477f2f /bin/bash
 
     2. The client binary is named "dynamo-cli". You can run that or "get-info.sh". (Both are in /bin)
 
