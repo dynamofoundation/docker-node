@@ -45,8 +45,8 @@ Web-bridge & web wallet support being added although this is still under develop
 
 "Bridge Troubleshooting"
 
-    1. There is a verbose flag that can be enabled in the `settings.txt` file. These logs will be written to `log.txt` file inside the container so you will have to connect to it in order to see its contents.
-    2. If your web bridge is crashing on sync, it likely isn't getting enough memory. This can be seen by running `docker stats` and looking at the "mem limit" which should be set to ~6Gb. (The bridge only needs this while syncing and will settle down to around 1.2G when done.) You may need to raise the memory limit for your core docker installation to allow for this. (I had to on my mac.)
+* There is a verbose flag that can be enabled in the `settings.txt` file. These logs will be written to `log.txt` file inside the container so you will have to connect to it in order to see its contents.
+* If your web bridge is crashing on sync, it likely isn't getting enough memory. This can be seen by running `docker stats` and looking at the "mem limit" which should be set to ~6Gb. (The bridge only needs this while syncing and will settle down to around 1.2G when done.) You may need to raise the memory limit for your core docker installation to allow for this. (I had to on my mac.)
 
 
 If you need to re-build everything from scratch due to upstream code changes you can do the following:
