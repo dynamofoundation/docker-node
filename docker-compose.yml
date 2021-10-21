@@ -1,9 +1,13 @@
-version: '3'
+version: '3.8'
 services:
   node:
     build:
       dockerfile: Dockerfile
       context: ./node
+    deploy:
+      resources:
+        limits:
+          memory: 2G
     ports:
     - '6432:6432'
     - '6433:6433'
@@ -18,6 +22,10 @@ services:
     build: 
       dockerfile: Dockerfile
       context: ./bridge
+    deploy:
+      resources:
+        limits:
+          memory: 6G
     environment:
       - NODE_HOST=node
       - NODE_RPCPORT=6432
@@ -28,6 +36,10 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./web
+    deploy:
+      resources:
+        limits:
+          memory: 2G
     ports:
       - '80:80'
     environment:
@@ -43,4 +55,8 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./php
+    deploy:
+      resources:
+        limits:
+          memory: 2G
 
