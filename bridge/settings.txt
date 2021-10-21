@@ -3,5 +3,5 @@
 "FullNodeRPC": "http://node:6433/",
 "FullNodeUser": "dynamo",
 "FullNodePass": "123456",
-"Verbose" : "true"
+"Verbose" : "false"
 }

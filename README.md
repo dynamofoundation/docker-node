@@ -36,10 +36,10 @@ Web-bridge & web wallet support being added although this is still under develop
     2. Edit the node/Dockerfile to use this as its volume. (Default is /var/tmp/dynamo)
     3. Create a dynamo.conf file based on the example and edit the user/password/nftdbkey settings.
     4. Place dynamo.conf file in your chosen data location.
-    5. Edit the bridge.php files in both the php and web directories to match your user/password.
-    6. Edit the settings.txt in the bridge directory to match your user/password.
-    7. (Optional) Create a client.conf based on the example and copy into your node data location.
-    8. Run "docker-compose up" from the root project folder and environment will be built.
+    5. Edit the settings.txt in the bridge directory to match your user/password.
+    6. (Optional) Create a client.conf based on the example and copy into your node data location.
+    7. Run "docker-compose up" from the root project folder and environment will be built.
+    8. BE PATIENT! The full node will need to sync from scratch as well as the web bridge. 
 
 # Notes
 
@@ -69,6 +69,6 @@ If you bothered to setup the client.conf file you can interact with the full nod
 # Dev status
 
 * Full node works.
-* Web wallet is not currently functional and is being worked on.
+* Web wallet appears to be working but needs more testing.
 * This README needs much more detail but this is a mimimum needed to get running.
 
