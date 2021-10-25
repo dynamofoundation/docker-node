@@ -9,7 +9,7 @@ RUN apt-get update && \
     apt-get install -y libevent-dev libboost-dev libboost-system-dev libboost-filesystem-dev libboost-test-dev libdb++-dev && \
     apt-get install -y git && \
     mkdir ~/.dynamo && \
-    git clone https://github.com/dynamofoundation/dynamo-core.git && \
+    git clone -b v1.0 https://github.com/dynamofoundation/dynamo-core.git && \
     cd dynamo-core && \
     echo "#!/bin/bash" > make-dynamo.sh && \
     echo "/usr/bin/make " >> make-dynamo.sh && \

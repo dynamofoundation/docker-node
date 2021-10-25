@@ -1,6 +1,8 @@
 version: '3.8'
 services:
   node:
+    image: dynamo-node:v1.0
+    container_name: dynamo-node
     build:
       dockerfile: Dockerfile
       context: ./node
@@ -18,7 +20,9 @@ services:
     volumes:
       - /var/tmp/dynamo/:/root/.dynamo/
   bridge:
-#    restart: always
+    image: dynamo-bridge:v1.0
+    container_name: dynamo-bridge
+    restart: always
     build: 
       dockerfile: Dockerfile
       context: ./bridge
@@ -32,6 +36,8 @@ services:
     depends_on:
       - node 
   web:
+    image: dynamo-web:v1.0
+    container_name: dynamo-web
     restart: always
     build:
       dockerfile: Dockerfile
@@ -51,6 +57,8 @@ services:
       - bridge 
       - php
   php:
+    image: dynamo-php:v1.0
+    container_name: dynamo-php
     restart: always
     build:
       dockerfile: Dockerfile

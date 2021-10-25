@@ -2,7 +2,7 @@ from nginx
 
 RUN apt-get update && \
     apt-get install -y git && \
-    git clone https://github.com/dynamofoundation/dyn-web-wallet.git && \
+    git clone -b v1.0 https://github.com/dynamofoundation/dyn-web-wallet.git && \
     mkdir -p /var/www/html && \
     #mv dyn-web-wallet/* /usr/share/nginx/html/ 
     mv dyn-web-wallet/* /var/www/html/ 
