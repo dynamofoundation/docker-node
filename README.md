@@ -40,6 +40,7 @@ Web-bridge & web wallet support being added although this is still under develop
     6. (Optional) Create a client.conf based on the example and copy into your node data location.
     7. Run "docker-compose up" from the root project folder and environment will be built.
     8. BE PATIENT! The full node will need to sync from scratch as well as the web bridge. 
+    9. Go to http://localhost to access the web wallet.
 
 # Notes
 
