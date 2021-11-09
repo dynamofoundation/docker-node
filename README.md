@@ -2,7 +2,7 @@
 
 This is a dockerized full node for DYNAMO coin. The intent for this project is to make running a full node more accessible for people to use for a dedicated mining node or contribute to the network.
 
-Web-bridge & web wallet support being added although this is still under development and not functional at this time.
+Web-bridge & web wallet support has also been added although it is still being tested.
 
 
 # Anatomy
