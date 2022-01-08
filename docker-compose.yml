@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   node:
-    image: dynamo-node:v1.0
+    image: dynamo-node:v1.1
     container_name: dynamo-node
     build:
       dockerfile: Dockerfile
@@ -23,7 +23,7 @@ services:
     image: dynamo-bridge:v1.0
     container_name: dynamo-bridge
     restart: always
-    build: 
+    build:
       dockerfile: Dockerfile
       context: ./bridge
     deploy:
@@ -34,7 +34,7 @@ services:
       - NODE_HOST=node
       - NODE_RPCPORT=6432
     depends_on:
-      - node 
+      - node
   web:
     image: dynamo-web:v1.0
     container_name: dynamo-web
@@ -54,7 +54,7 @@ services:
       - NODE_RPCPORT=6432
       - NODE_SRVPORT=6433
     depends_on:
-      - bridge 
+      - bridge
       - php
   php:
     image: dynamo-php:v1.0
@@ -67,4 +67,3 @@ services:
       resources:
         limits:
           memory: 2G
-
