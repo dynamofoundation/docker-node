@@ -7,7 +7,7 @@ RUN apt-get update && \
     apt-get install -y libevent-dev libboost-dev libboost-system-dev libboost-filesystem-dev libboost-test-dev libdb++-dev && \
     apt-get install -y git 
 
-RUN git clone -b v1.1-rc1 https://github.com/dynamofoundation/dynamo-core.git /dynamo/dynamo-core
+RUN git clone -b v1.1 https://github.com/dynamofoundation/dynamo-core.git /dynamo/dynamo-core
 
 WORKDIR /dynamo/dynamo-core 
 

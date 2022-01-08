@@ -76,6 +76,5 @@ If you bothered to setup the client.conf file you can interact with the full nod
 # Dev status
 
 * Full node works.
-* Web wallet appears to be working but needs more testing.
-* This README needs much more detail but this is a mimimum needed to get running.
-
+* Web wallet works but NOT the BSC swap. (That functionality is not portable and only works on the foundation web wallet.)
+* Updated for core node v1.1
