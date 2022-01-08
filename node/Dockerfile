@@ -8,9 +8,11 @@ RUN apt-get update && \
     apt-get install -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 && \
     apt-get install -y libevent-dev libboost-dev libboost-system-dev libboost-filesystem-dev libboost-test-dev libdb++-dev && \
     apt-get install -y git && \
-    mkdir ~/.dynamo && \
-    git clone -b v1.0 https://github.com/dynamofoundation/dynamo-core.git && \
-    cd dynamo-core && \
+    mkdir ~/.dynamo 
+
+RUN git clone -b 1.1-rc1 https://github.com/dynamofoundation/dynamo-core.git 
+
+RUN cd dynamo-core && \
     echo "#!/bin/bash" > make-dynamo.sh && \
     echo "/usr/bin/make " >> make-dynamo.sh && \
     echo "exit 0" >> make-dynamo.sh && \
@@ -20,6 +22,7 @@ RUN apt-get update && \
     ./make-dynamo.sh || echo "failed!" && \
     cp ./src/bitcoind /bin/dynamo-core && \
     cp ./src/bitcoin-cli /bin/dynamo-cli && \
+    cp ./build_msvc/bitcoind/hash_algo.txt /dynamo/ && \
     cd .. && rm -rfv dynamo-core && \
     apt-get remove -y build-essential libtool autotools-dev automake pkg-config bsdmainutils python3 && \
     apt-get autoremove -y && \
@@ -29,4 +32,3 @@ COPY get-info.sh /bin/
 	
 	
 CMD ["dynamo-core"]
-
